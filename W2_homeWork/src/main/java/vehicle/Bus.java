@@ -11,9 +11,9 @@ public class Bus extends Vehicle implements Status{
         busSerialNum++;
         this.maxPassenger = maxPassenger;
         this.currentPassenger = currentPassenger;
-        this.supplyOil(oil);
         super.status[0] = true;
         this.isStatus();
+        this.supplyOil(oil);
     }
 
 
@@ -33,9 +33,10 @@ public class Bus extends Vehicle implements Status{
 
     @Override
     public void supplyOil(int oil) {
-        if(super.oil > 10) {
+        if(oil > 10) {
             super.oil =  oil;
             System.out.println(oil + "만큼 주유하였습니다.");
+            super.status[0] = true;
         }else {
             super.oil = oil;
             System.out.println("주유가 부족합니다. 주유해주시길 바랍니다.");

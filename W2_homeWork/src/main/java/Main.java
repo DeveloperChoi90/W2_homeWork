@@ -92,15 +92,16 @@ public class Main {
 //        taxi.isOilStatus();
 //        taxi.getCarNum();
 
-        /*Taxi taxi2 = new Taxi(40, 100);
-        taxi2.pickupPassenger(3, "서울 마포구", 30);
+//        Taxi taxi2 = new Taxi(40, 100);
+//        taxi2.pickupPassenger(3, "서울 마포구", 30);
 //        taxi2.isStatus();
 //        taxi2.isOilStatus();
-        taxi2.getCarNum();
-        taxi2.calTotalFare();*/
+//        taxi2.getCarNum();
+//        taxi2.calTotalFare();
 
-        Bus bus1 = new Bus(50, 24, 30, 60);
-//        System.out.println(bus1.convertSpeed(40));
+        Bus bus1 = new Bus(50, 24, 10, 60);
+        bus1.supplyOil(40);
+        bus1.boardingBus(30);
         bus1.endBus();
     }
 }

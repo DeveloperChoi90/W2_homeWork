@@ -1,9 +1,9 @@
 package vehicle;
 
 interface Status{
-    public void getCarNum();
-    public void isStatus();
-    public void supplyOil(int oil);
+    public abstract void getCarNum();
+    public abstract void isStatus();
+    public abstract void supplyOil(int oil);
 }
 
 public abstract class Vehicle {
