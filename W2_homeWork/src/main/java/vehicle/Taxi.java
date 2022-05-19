@@ -21,7 +21,7 @@ public class Taxi extends Vehicle implements Status {
     // 택시 고유번호 얻는 method
     @Override
     public void getCarNum() {
-        System.out.println(taxiSerialNum);
+        System.out.println("택시 번호 : " + taxiSerialNum);
     }
 
     // 택시의 현재 상태를 알 수 있는 method
@@ -55,11 +55,13 @@ public class Taxi extends Vehicle implements Status {
     }
 
     // 택시에서 손님 내려는 method
-    public void getOffVehicle() { // 중간에 경유하는 경우를 생각해야한다.
+    void getOffVehicle() { // 중간에 경유하는 경우를 생각해야한다.
+        super.status[0] = false;
         super.status[1] = false;
         this.passenger = 0;
         this.targetDistance = 0;
         this.destination = "";
+        super.oil = 0;
 
         System.out.println("손님이 내렸습니다.");
     }
@@ -101,10 +103,9 @@ public class Taxi extends Vehicle implements Status {
     public int calTotalFare() {
         if (super.status[1]) {
             int totalFare = (this.targetDistance > this.baseDistance) ? (this.baseFare + (this.targetDistance - this.baseDistance) * this.additionalFare) : this.baseFare;
-            super.oil = 0;
-            super.status[0] = false;
             System.out.println(destination + "까지 나온 요금은 " + totalFare + "원 입니다.");
-            isOilStatus();
+            this.getOffVehicle();
+            System.out.println("주유량: 0");
             return totalFare;
         }
         System.out.println("손님이 탑승 중이 아닙니다.");

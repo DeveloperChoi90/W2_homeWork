@@ -86,22 +86,26 @@ public class Main {
         System.out.println("--- 펭귄 ---");
         penguin.fly(1,2, 3);*/
 
-//        Taxi taxi = new Taxi(20, 80);
-//        taxi.pickupPassenger(3, "서울 마포구", 30);
-//        taxi.isStatus();
-//        taxi.isOilStatus();
-//        taxi.getCarNum();
+        Taxi taxi = new Taxi(20, 80);
+        taxi.getCarNum();
+        taxi.pickupPassenger(3, "서울 마포구", 30);
+        taxi.isStatus();
+        taxi.isOilStatus();
+        taxi.getCarNum();
+        taxi.calTotalFare();
+        System.out.println("----------------");
 
-//        Taxi taxi2 = new Taxi(40, 100);
-//        taxi2.pickupPassenger(3, "서울 마포구", 30);
-//        taxi2.isStatus();
+        Taxi taxi2 = new Taxi(40, 100);
+        taxi2.getCarNum();
+        taxi2.pickupPassenger(3, "서울 마포구", 30);
+        taxi2.isStatus();
 //        taxi2.isOilStatus();
-//        taxi2.getCarNum();
-//        taxi2.calTotalFare();
+        taxi2.calTotalFare();
+        taxi2.isStatus();
 
-        Bus bus1 = new Bus(50, 24, 10, 60);
-        bus1.supplyOil(40);
-        bus1.boardingBus(30);
-        bus1.endBus();
+//        Bus bus1 = new Bus(50, 24, 10, 60);
+//        bus1.supplyOil(40);
+//        bus1.boardingBus(30);
+//        bus1.endBus();
     }
 }
