@@ -101,7 +101,10 @@ public class Taxi extends Vehicle implements Status {
     public int calTotalFare() {
         if (super.status[1]) {
             int totalFare = (this.targetDistance > this.baseDistance) ? (this.baseFare + (this.targetDistance - this.baseDistance) * this.additionalFare) : this.baseFare;
+            super.oil = 0;
+            super.status[0] = false;
             System.out.println(destination + "까지 나온 요금은 " + totalFare + "원 입니다.");
+            isOilStatus();
             return totalFare;
         }
         System.out.println("손님이 탑승 중이 아닙니다.");
